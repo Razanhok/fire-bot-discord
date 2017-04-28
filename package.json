@@ -20,7 +20,9 @@
     "isit": "^1.0.0",
     "komada": "^0.18.1",
     "make-unique": "^1.0.4",
-    "request-promise-native": "^1.0.3"
+    "request": "2.81.0",
+    "request-promise-native": "^1.0.3",
+    "superagent": "3.5.2"
   },
   "devDependencies": {
     "eslint": "^3.15.0",
