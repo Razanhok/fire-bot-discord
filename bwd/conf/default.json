@@ -18,5 +18,51 @@
   "lang": {
     "type": "String",
     "data": "en"
+  },
+  "roles": {
+    "type": "Array",
+    "data": [
+      "Offense",
+      "Defense",
+      "Support",
+      "Tank",
+      "Flex",
+      "EU",
+      "NA",
+      "Asia",
+      "AUS",
+      "PC",
+      "XBOX",
+      "PS4"
+    ]
+  },
+  "heroes": {
+    "type": "Array",
+    "data": [
+      "Genji",
+      "McCree",
+      "Pharah",
+      "Reaper",
+      "Soldier",
+      "Sombra",
+      "Tracer",
+      "Bastion",
+      "Hanzo",
+      "Junkrat",
+      "Mei",
+      "Torbjorn",
+      "Widowmaker",
+      "D.Va",
+      "Orisa",
+      "Reinhardt",
+      "Roadhog",
+      "Winston",
+      "Zarya",
+      "Ana",
+      "Lucio",
+      "Mercy",
+      "Symmetra",
+      "Zenyatta"
+    ]
   }
 }
