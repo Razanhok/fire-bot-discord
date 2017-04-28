@@ -34,7 +34,7 @@ exports.run = (client, msg, [operation, role, ...roles]) => {
     possibleRoles = msg.guildConf.heroes;
   }
 
-  // end of role list config marker / start of comman part with role.js ----------------------------
+  // end of role list config marker / start of common part between role.js and hero.js ----------------------------
 
   // make roles be an array with all the roles the user wants
   if (isit("non-empty array", roles)) {
@@ -207,6 +207,8 @@ exports.run = (client, msg, [operation, role, ...roles]) => {
 
   client.funcs.log("END OF COMMAND", "debug");
   client.funcs.log("¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦", "debug");
+
+  // end of common part between role.js and hero.js ----------------------------
 };
 
 exports.conf = {
