@@ -16,12 +16,11 @@
   },
   "dependencies": {
     "case-insensitive": "^1.0.0",
-    "discord.js": "^11.0.0",
     "fast-levenshtein": "^2.0.6",
     "isit": "^1.0.0",
     "komada": "^0.18.1",
     "make-unique": "^1.0.4",
-    "moment": "^2.18.1"
+    "request-promise-native": "^1.0.3"
   },
   "devDependencies": {
     "eslint": "^3.15.0",
