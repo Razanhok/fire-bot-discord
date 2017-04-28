@@ -1,1 +1,1 @@
-worker:  node --harmony app.js
+worker:  npm i && node --harmony app.js
