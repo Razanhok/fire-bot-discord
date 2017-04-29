@@ -1,5 +1,5 @@
 {
-  "name": "fire-bot",
+  "name": "firebot",
   "version": "0.0.1",
   "description": "Discord bot for Fire Overwatch",
   "author": "Damian Blume",
@@ -18,7 +18,7 @@
     "case-insensitive": "^1.0.0",
     "fast-levenshtein": "^2.0.6",
     "isit": "^1.0.0",
-    "komada": "^0.18.1",
+    "komada": "^0.19.0",
     "make-unique": "^1.0.4",
     "request": "2.81.0",
     "request-promise-native": "^1.0.3",
