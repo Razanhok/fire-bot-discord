@@ -1,12 +1,11 @@
 {
-  "name": "firebot",
+  "name": "fire-bot-discord",
   "version": "0.0.1",
   "description": "Discord bot for Fire Overwatch",
   "author": "Damian Blume",
   "main": "app.js",
   "scripts": {
     "start": "node --harmony app.js",
-    "startdev": "pm2 start startDev.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
@@ -22,7 +21,8 @@
     "make-unique": "^1.0.4",
     "request": "2.81.0",
     "request-promise-native": "^1.0.3",
-    "superagent": "3.5.2"
+    "superagent": "3.5.2",
+    "uws": "^0.14.5"
   },
   "devDependencies": {
     "eslint": "^3.15.0",
