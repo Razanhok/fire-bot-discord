@@ -151,14 +151,14 @@ module.exports = (client, msg, operation, role, roles, possibleRoles) => {
       const isAdd = operation === "add";
       msg.reply(`${oprtn} the \`${rlsChngd}\` role${rlChngdmore1 ? "s" : ""}.${rlsUnchngdNotEmpty ? ` You ${isAdd ? "already had" : "already didn't have"} the ${rlsUnchngdmore1 ? `\`${rlsUnchngd}\` roles.` : `\`${rolesUnchanged[0]}\` role.`}` : ""}${isit("non-empty array", unknownArgs) ? ` I don't know what you meant by \`${unknownArgs.join(", ")}\`. You can do \`${msg.guildConf.prefix}listroles\` to get a list of possible roles.` : ""}`);
     } else {
-      msg.reply(`${isit("non-empty array", unknownArgs) ? `The ${unknownArgs.length > 1 ? `\`${unknownArgs.join(", ")}\` roles you provided don't exist or are not self assignable` : ` \`${unknownArgs[0]}\` you provided doesn't exist or ins't self assignable`}. You can do \`${msg.guildConf.prefix}listroles\` to get a list of possible roles. ${isit("non-empty array", rolesUnchanged) ? "Also, y" : ""}` : "Y"}${isit("non-empty array", rolesUnchanged) ? `ou ${operation === "add" ? "already had" : "already didn't have"} the ${rolesUnchanged.length > 1 ? `\`${rolesUnchanged.join(", ")}\` roles.` : `\`${rolesUnchanged[0]}\` role.`}` : ""}`);
+      msg.reply(`${isit("non-empty array", unknownArgs) ? `The ${unknownArgs.length > 1 ? `\`${unknownArgs.join(", ")}\` roles you provided don't exist or are not self assignable` : ` \`${unknownArgs[0]}\` you provided doesn't exist or ins't self assignable`}. You can do \`${msg.guildConf.prefix}listroles\` to get a list of self assignable roles. ${isit("non-empty array", rolesUnchanged) ? "Also, y" : ""}` : "Y"}${isit("non-empty array", rolesUnchanged) ? `ou ${operation === "add" ? "already had" : "already didn't have"} the ${rolesUnchanged.length > 1 ? `\`${rolesUnchanged.join(", ")}\` roles.` : `\`${rolesUnchanged[0]}\` role.`}` : ""}`);
     }
   }
 
   // add roles
   if (isit("non-empty array", rolesToAdd)) {
     client.funcs.log("Adding roles", "debug");
-    msg.member.addRoles(rolesToAdd).then((member) => { /* eslint-disable-line no-unsused-vars */
+    msg.member.addRoles(rolesToAdd).then((member) => { // eslint-disable-line no-unused-vars
       /* client.funcs.log(`member.roles.size = ${member.roles.size}`, "debug");
       if (!rolesToAdd.every((roleToAdd) => { return member.roles.some((r) => { return roleToAdd.id === r.id; }); })) {
         msg.channel.stopTyping(true);
@@ -173,7 +173,7 @@ module.exports = (client, msg, operation, role, roles, possibleRoles) => {
     });
   } else if (isit("non-empty array", rolesToRemove)) { // make remove like add
     client.funcs.log("Adding roles", "debug");
-    msg.member.removeRoles(rolesToRemove).then((member) => {
+    msg.member.removeRoles(rolesToRemove).then((member) => { // eslint-disable-line no-unused-vars
       /* if (!rolesToRemove.every((roleToRemove) => { return member.roles.some((r) => { return roleToRemove.id === r.id; }); })) {
         msg.channel.stopTyping(true);
         throw new Error("Failed to add one or more roles.");
@@ -190,9 +190,6 @@ module.exports = (client, msg, operation, role, roles, possibleRoles) => {
   }
 
   msg.channel.stopTyping(true);
-
   client.funcs.log("END OF COMMAND", "debug");
   client.funcs.log("¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦", "debug");
-
-  // end of common part between role.js and hero.js ----------------------------
 };
