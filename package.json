@@ -6,9 +6,13 @@
   "main": "app.js",
   "scripts": {
     "start": "node --harmony app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"There is no test\" && exit 1",
+    "precommit": "lint-staged",
     "deploy-dev": "git push heroku-dev master",
     "deploy": "git push heroku master"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
   },
   "license": "MIT",
   "engines": {
@@ -32,6 +36,8 @@
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-plugin-react": "^6.9.0",
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.1"
   }
 }
