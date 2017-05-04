@@ -27,6 +27,7 @@ module.exports = (client, msg, operation, role, roles, possibleRoles) => {
 
   roles.forEach((element, index) => {
     element.replace(/[^a-zA-ZÀ-ö]/g, "");
+    roles[index].replace(/[^a-zA-ZÀ-ö]/g, "");
     if (!ci(possibleRoles).includes(element)) {
       if (isit("empty", element)) {
         roles[index] = { invalid: true };
