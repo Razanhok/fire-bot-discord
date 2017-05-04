@@ -25,9 +25,11 @@ module.exports = (client, msg, operation, role, roles, possibleRoles) => {
 
   if (roles.length > 2) msg.channel.startTyping();
 
+  roles = roles.map((element) => {
+    return element.replace(/[^a-zA-ZÀ-ö]/g, "");
+  });
+
   roles.forEach((element, index) => {
-    element.replace(/[^a-zA-ZÀ-ö]/g, "");
-    roles[index].replace(/[^a-zA-ZÀ-ö]/g, "");
     if (!ci(possibleRoles).includes(element)) {
       if (isit("empty", element)) {
         roles[index] = { invalid: true };
