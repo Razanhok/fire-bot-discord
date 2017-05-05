@@ -9,7 +9,8 @@
     "test": "echo \"There is no test\" && exit 1",
     "precommit": "lint-staged",
     "deploy-dev": "git push heroku-dev master",
-    "deploy": "git push heroku master"
+    "deploy": "git push heroku master",
+    "heroku-postbuild": "npm i"
   },
   "lint-staged": {
     "*.js": "eslint"
