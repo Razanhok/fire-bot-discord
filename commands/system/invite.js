@@ -1,5 +1,5 @@
 exports.run = (client, msg) => {
-  msg.reply("You can't invite Fire Bot to another guild.");
+  msg.reply("You can't invite Fire Bot to another guild. Talk to dada1134 for more infos.");
 };
 
 exports.help = {
