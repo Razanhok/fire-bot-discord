@@ -1,6 +1,6 @@
 {
   "name": "fire-bot-discord",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Discord bot for Fire Overwatch",
   "author": "Damian Blume",
   "main": "app.js",
@@ -38,6 +38,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
     "husky": "^0.13.3",
-    "lint-staged": "^3.4.1"
+    "lint-staged": "^3.4.1",
+    "pg-promise": "^5.6.7"
   }
 }
