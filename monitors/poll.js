@@ -5,7 +5,8 @@ exports.conf = {
 };
 
 exports.run = (client, msg) => {
-  if (!msg.content.startsWith("poll:")) return;
-  msg.react("👍").catch();
-  msg.react("👎").catch();
+  if (msg.content.startsWith("poll:")) {
+    msg.react("👍").catch();
+    msg.react("👎").catch();
+  }
 };
