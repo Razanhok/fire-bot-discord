@@ -1,12 +1,11 @@
+/* eslint-disable */
 const pgp = require("pg-promise")();
 
-const cn = {
-  host: "process.env.DATABASE_URL",
-};
-const db = pgp(cn);
-
 exports.run = (client, msg) => {
-
+  const cn = {
+    host: "process.env.DATABASE_URL",
+  };
+  const db = pgp(cn);
 };
 
 exports.conf = {
