@@ -6,7 +6,7 @@ exports.run = (client, oldMessage, newMessage) => {
 
   const logChannel = newMessage.guild.channels.find("name", "log");
   if (!logChannel) return;
-  if (levenshtein(oldMessage.cleanContent, newMessage.cleanContent) < 5) return;
+  if (levenshtein(oldMessage.cleanContent, newMessage.cleanContent) < 3) return;
   if (!logChannel.permissionsFor(logChannel.guild.me).has("READ_MESSAGES")) return;
   if (!logChannel.permissionsFor(logChannel.guild.me).has("SEND_MESSAGES")) return;
 
