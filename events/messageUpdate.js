@@ -1,12 +1,12 @@
 const moment = require("moment-timezone");
-const levenshtein = require("fast-levenshtein");
+const levenshtein = require("leven");
 
 exports.run = (client, oldMessage, newMessage) => {
   if (oldMessage.channel.type !== "text" || oldMessage.author.bot) return;
 
   const logChannel = newMessage.guild.channels.find("name", "log");
   if (!logChannel) return;
-  if (levenshtein.get(oldMessage.cleanContent, newMessage.cleanContent) < 5) return;
+  if (levenshtein(oldMessage.cleanContent, newMessage.cleanContent) < 5) return;
   if (!logChannel.permissionsFor(logChannel.guild.me).has("READ_MESSAGES")) return;
   if (!logChannel.permissionsFor(logChannel.guild.me).has("SEND_MESSAGES")) return;
 

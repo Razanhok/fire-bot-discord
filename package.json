@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "case-insensitive": "^1.0.0",
-    "fast-levenshtein": "^2.0.6",
+    "leven": "^2.0.6",
     "isit": "^1.0.0",
     "komada": "^0.19.1",
     "make-unique": "^1.0.4",

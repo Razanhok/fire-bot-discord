@@ -1,4 +1,4 @@
-const levenshtein = require("fast-levenshtein");
+const levenshtein = require("leven");
 const makeUnique = require("make-unique");
 const ci = require("case-insensitive");
 const isit = require("isit");
@@ -34,7 +34,7 @@ module.exports = (client, msg, operation, role, roles, possibleRoles) => {
       if (isit("empty", element)) {
         roles[index] = { invalid: true };
       } else if (!possibleRoles.some((possRole) => {
-        if (levenshtein.get(possRole.toLowerCase(), element.toLowerCase()) < (possRole.length / 2.5)) {
+        if (levenshtein(possRole.toLowerCase(), element.toLowerCase()) < (possRole.length / 2.5)) {
           const foundRole = collectionFindNoCase(msg.guild.roles, possRole);
           if (!isit("non-empty object", foundRole)) {
             msg.channel.stopTyping(true);
