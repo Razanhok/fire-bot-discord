@@ -26,6 +26,7 @@
     "isit": "^1.0.0",
     "komada": "^0.19.1",
     "make-unique": "^1.0.4",
+    "moment": "^2.18.1",
     "request": "2.81.0",
     "request-promise-native": "^1.0.3",
     "superagent": "3.5.2",
