@@ -39,5 +39,7 @@ exports.help = {
   description: "Displays stats about the server",
   usage: "",
   usageDelim: "",
-  extendedHelp: "Stats are:\nMember count\nMembers online count",
+  extendedHelp: `Stats are:
+  Member count
+  Members online count`,
 };
