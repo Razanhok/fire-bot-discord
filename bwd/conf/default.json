@@ -22,8 +22,7 @@
   "roles": {
     "type": "Array",
     "data": [
-      "Offense",
-      "Defense",
+      "DPS",
       "Support",
       "Tank",
       "Flex",
