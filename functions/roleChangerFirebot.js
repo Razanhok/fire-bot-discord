@@ -4,7 +4,6 @@ const isit = require('isit')
 
 module.exports = (client, msg, operation, r, roles, possibleRoles) => {
   if (operation !== 'add' && operation !== 'remove') operation = 'add'
-  client.funcs.log('Started role changer function')
   function findRole (collection, string) {
     return collection.find((item) => {
       return item.name.toLowerCase() === string.toLowerCase()
@@ -55,14 +54,11 @@ module.exports = (client, msg, operation, r, roles, possibleRoles) => {
 
   if (roles.length > 2) msg.channel.startTyping()
 
-  console.log(roles)
-
   const rolesToChange = []
   const rolesUnchanged = []
   const invalidRoles = []
   roles.forEach((e) => {
     const best = bestMatch(possibleRoles, removeSpecial(e))
-    console.log(best)
     if (best.diff < (best.element.length / 4) + 1) {
       const foundRole = findRole(msg.guild.roles, best.element)
       if (!foundRole) throw new ReferenceError('Error: one or more roles in config do not exist on this server.')
@@ -115,7 +111,6 @@ module.exports = (client, msg, operation, r, roles, possibleRoles) => {
         })
       }
     } catch (e) {
-      client.funcs.log(e)
       throw new Error('Error: failed to add one or more roles.')
     }
   } else {

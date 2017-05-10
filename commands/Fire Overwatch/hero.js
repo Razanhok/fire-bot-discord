@@ -3,7 +3,6 @@ const isit = require('isit')
 /* eslint no-param-reassign: "off" */
 
 exports.run = (client, msg, [operation, role, ...roles]) => {
-  client.funcs.log('START OF COMMAND', 'debug')
   if (!isit('non-empty string', operation)) operation = 'add'
   let possibleRoles = []
   // check if the role list is in config
