@@ -93,10 +93,10 @@ module.exports = (client, msg, operation, r, roles, possibleRoles) => {
       text.push(`${operation === 'add' ? 'added' : 'removed'} the \`${rolesToChange.map(element => element.name).join(' / ')}\` role${rtc > 1 ? 's' : ''}`)
     }
     if (isit('truthy', ru)) {
-      text.push(`the \`${rolesUnchanged.map(element => element.name).join(' / ')}\` role${ru > 1 ? "s weren't" : " wasn't"} changed because you ${operation === 'add' ? `already have ${ru > 1 ? 'them' : 'it'}` : `already don't have ${ru > 1 ? 'them' : 'it'}`}${isit('falsey', rtc) && operation === 'add' ? `. To remove a role, you can do \`!role remove ${rolesUnchanged[0].name}\`` : ''}`)
+      text.push(`you already did not have the \`${rolesUnchanged.map(element => element.name).join(' / ')}\` ${ru > 1 ? "roles, so they weren't changed" : "role, so it wasn't changed"}${isit('falsey', rtc) && operation === 'add' ? ` (to remove a role, you can do \`!role remove ${rolesUnchanged[0].name}\`)` : ''}`)
     }
     if (isit('truthy', ir)) {
-      text.push(`the \`${invalidRoles.join(' / ')}\` ${ru > 1 ? "roles you specified don't exist or aren't self assignable" : "role you specified doesn't exist or isn't self assignable"}`)
+      text.push(`the \`${invalidRoles.join(' / ')}\` ${ir > 1 ? "roles you specified don't exist or aren't self assignable" : "role you specified doesn't exist or isn't self assignable"}`)
     }
 
     let formatedText = text.join(', ') + '.'
@@ -121,22 +121,6 @@ module.exports = (client, msg, operation, r, roles, possibleRoles) => {
   } else {
     userReply()
   }
-
-  /*
-  msg.channel.stopTyping(true);
-  if (isit("non-empty array", rolesChanged)) {
-    const rlsChngd = rolesChanged.join(", ");
-    const rlChngdmore1 = rolesChanged.length > 1;
-    const rlsUnchngd = rolesUnchanged.join(", ");
-    const rlsUnchngdmore1 = rolesUnchanged.length > 1;
-    const rlsUnchngdNotEmpty = isit("non-empty array", rolesUnchanged);
-    const oprtn = operation === "add" ? "added" : "removed";
-    const isAdd = operation === "add";
-    msg.reply(`${oprtn} the \`${rlsChngd}\` role${rlChngdmore1 ? "s" : ""}.${rlsUnchngdNotEmpty ? ` You ${isAdd ? "already had" : "already didn't have"} the ${rlsUnchngdmore1 ? `\`${rlsUnchngd}\` roles.` : `\`${rolesUnchanged[0]}\` role.`}` : ""}${isit("non-empty array", unknownArgs) ? ` I don't know what you meant by \`${unknownArgs.join(", ")}\`. You can do \`${msg.guildConf.prefix}listroles\` to get a list of possible roles.` : ""}`);
-  } else {
-    msg.reply(`${isit("non-empty array", unknownArgs) ? `The ${unknownArgs.length > 1 ? `\`${unknownArgs.join(", ")}\` roles you provided don't exist or are not self assignable` : ` \`${unknownArgs[0]}\` role you provided doesn't exist or ins't self assignable`}. You can do \`${msg.guildConf.prefix}listroles\` to get a list of self assignable roles. ${isit("non-empty array", rolesUnchanged) ? "Also, y" : ""}` : "Y"}${isit("non-empty array", rolesUnchanged) ? `ou ${operation === "add" ? "already had" : "already didn't have"} the ${rolesUnchanged.length > 1 ? `\`${rolesUnchanged.join(", ")}\` roles.` : `\`${rolesUnchanged[0]}\` role.`}` : ""}`);
-  }
-  */
 
   msg.channel.stopTyping(true)
 }
