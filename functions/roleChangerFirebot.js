@@ -72,7 +72,6 @@ module.exports = (client, msg, operation, r, roles, possibleRoles) => {
       invalidRoles.push(e)
     }
   })
-  // checkedRoles.push({ argument: best.string, role: foundRole, diff: best.diff, hasRole: hasR, hasToChange: needChange });
 
   makeUnique(rolesToChange, (a, b) => {
     if (!a.id || !b.id) return false
