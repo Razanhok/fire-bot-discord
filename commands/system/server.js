@@ -1,45 +1,45 @@
 exports.run = (client, msg) => {
-  let onlineMembers = "error";
+  let onlineMembers = 'error'
   onlineMembers = msg.guild.members.filterArray((guildMember) => {
-    if (guildMember.user.presence.status !== "offline") return true;
-    return false;
-  }).length;
+    if (guildMember.user.presence.status !== 'offline') return true
+    return false
+  }).length
 
-  msg.channel.send("", { embed: {
+  msg.channel.send('', { embed: {
     color: 39423,
     author: {
       name: msg.guild.name,
-      icon_url: msg.guild.iconURL,
+      icon_url: msg.guild.iconURL
     },
-    title: "Server stats",
+    title: 'Server stats',
     fields: [{
-      name: "Members",
+      name: 'Members',
       value: msg.guild.memberCount,
-      inline: true,
+      inline: true
     },
     {
-      name: "Members online",
+      name: 'Members online',
       value: onlineMembers,
-      inline: true,
-    }],
-  } });
-};
+      inline: true
+    }]
+  } })
+}
 
 exports.conf = {
   enabled: true,
-  runIn: ["text"],
-  aliases: ["sstats", "s"],
+  runIn: ['text'],
+  aliases: ['sstats', 's'],
   permLevel: 0,
   botPerms: [],
-  requiredFuncs: [],
-};
+  requiredFuncs: []
+}
 
 exports.help = {
-  name: "server",
-  description: "Displays stats about the server",
-  usage: "",
-  usageDelim: "",
+  name: 'server',
+  description: 'Displays stats about the server',
+  usage: '',
+  usageDelim: '',
   extendedHelp: `Stats are:
   Member count
-  Members online count`,
-};
+  Members online count`
+}
