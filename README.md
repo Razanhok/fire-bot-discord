@@ -2,9 +2,7 @@
 
 This README woulld normally document whatever steps are necessary to get your application up and running.
 
-![](https://vergiberation.files.wordpress.com/2016/08/troll.jpg)
-
-### What is this repository for? ###
+###What is this repository for?###
 
 * Quick summary
 * Version
