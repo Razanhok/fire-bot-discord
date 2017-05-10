@@ -1,31 +1,14 @@
-# README #
+# Fire Bot #
 
-This README woulld normally document whatever steps are necessary to get your application up and running.
+[![Discord](https://discordapp.com/api/guilds/293161643674828800/embed.png)](https://discord.gg/T3PwHJ4)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-![](https://vergiberation.files.wordpress.com/2016/08/troll.jpg)
+Fire Bot is the bot for the Fire Overwatch 2.0 Discord server
 
-### What is this repository for? ###
+### What does the bot do? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* To-Do: this.list
 
-### How do I get set up? ###
+### How do I invite it? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Currently the bot is not designed to be used on another server than Fire Overwatch.
