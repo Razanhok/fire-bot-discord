@@ -88,7 +88,7 @@ module.exports = (client, msg, operation, r, roles, possibleRoles) => {
       text.push(`${operation === 'add' ? 'added' : 'removed'} the \`${rolesToChange.map(element => element.name).join(' / ')}\` role${rtc > 1 ? 's' : ''}`)
     }
     if (isit('truthy', ru)) {
-      text.push(`you already did not have the \`${rolesUnchanged.map(element => element.name).join(' / ')}\` ${ru > 1 ? "roles, so they weren't changed" : "role, so it wasn't changed"}${isit('falsey', rtc) && operation === 'add' ? ` (to remove a role, you can do \`!role remove ${rolesUnchanged[0].name}\`)` : ''}`)
+      text.push(`you already ${operation === 'add' ? 'had' : 'did not have'} the \`${rolesUnchanged.map(element => element.name).join(' / ')}\` ${ru > 1 ? "roles, so they weren't changed" : "role, so it wasn't changed"}${isit('falsey', rtc) && operation === 'add' ? ` (to remove a role, you can do \`!role remove ${rolesUnchanged[0].name}\`)` : ''}`)
     }
     if (isit('truthy', ir)) {
       text.push(`the \`${invalidRoles.join(' / ')}\` ${ir > 1 ? "roles you specified don't exist or aren't self assignable" : "role you specified doesn't exist or isn't self assignable"}`)
