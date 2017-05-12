@@ -102,5 +102,5 @@ exports.run = (client, msg) => {
 exports.conf = {
   enabled: true,
   ignoreBots: true,
-  ignoreSelf: false
+  ignoreSelf: true
 }
