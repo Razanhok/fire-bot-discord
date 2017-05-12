@@ -1,5 +1,8 @@
 # Add any directories, files, or patterns you don't want to be tracked by version control
 
+# Visual Studio Code config
+.vscode
+
 # Heroku environment variables, contains tokens...
 .env
 

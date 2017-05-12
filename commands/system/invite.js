@@ -1,19 +1,19 @@
 exports.run = (client, msg) => {
-  msg.reply("You can't invite Fire Bot to another guild. Talk to dada1134 for more infos.");
-};
+  msg.reply("You can't invite Fire Bot to another guild. Talk to dada1134 for more infos.")
+}
 
 exports.help = {
-  name: "invite",
-  description: "Displays the join server link of the bot.",
-  usage: "",
-  usageDelim: "",
-};
+  name: 'invite',
+  description: 'Displays the join server link of the bot.',
+  usage: '',
+  usageDelim: ''
+}
 
 exports.conf = {
   enabled: false,
-  runIn: ["text", "dm"],
+  runIn: ['text', 'dm'],
   aliases: [],
   permLevel: 0,
   botPerms: [],
-  requiredFuncs: [],
-};
+  requiredFuncs: []
+}
