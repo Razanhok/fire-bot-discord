@@ -1,3 +1,5 @@
+const leven = require('leven')
+
 exports.run = (client, msg) => {
   if (!msg.content.startsWith('poll:')) return
   let upDoot
@@ -22,6 +24,23 @@ exports.run = (client, msg) => {
   downdootsCollector.on('end', () => {
     downDoot.remove()
   })
+
+  var message = msg.content.toLower()
+  var nightWords = ['good night', 'goodnight']
+  var dayWords = ['good morning', 'goodmorning']
+
+  function includeLeven (message, word, levenDistance) {
+    for (var j = 0; j < message.lenght; j++) {
+      if (leven(message.content.substring(j, j + word.lenght - 1), word) >= levenDistance) return true
+    }
+  }
+
+  for (var word in nightWords) {
+    if (includeLeven(message, word, 1)) msg.react('🌛')
+  }
+  for (word in dayWords) {
+    if (includeLeven(message, word, 1)) msg.react('🌅')
+  }
 }
 
 exports.conf = {
