@@ -42,38 +42,36 @@ exports.run = (client, msg) => {
       type: 'includes',
       strings: ['good morning', 'goodmorning'],
       reactions: [
-        '🌛'
+        '🌅'
       ]
     }
   ]
 
-  reactors.some((reactor) => {
+  reactors.forEach((reactor) => {
     let found = false
     reactor.strings.some((search) => {
       let stringToFind = search
       let wordsToFind = search.split(' ')
       switch (reactor.type) {
         case 'startsWith':
-          if (msg.content.startsWith(stringToFind)) {
+          if (msg.content.toLowerCase().startsWith(stringToFind.toLowerCase())) {
             found = reactor
             break
           }
+          // only finds perfect match
           break
         case 'includes':
-          if (msg.content.includes(stringToFind)) {
+          if (msg.content.toLowerCase().includes(stringToFind.toLowerCase())) {
             found = reactor
             break
           }
           msg.content.split(' ').some((word, index, arr) => {
-            if (leven(wordsToFind[0], word) <= maxDistPercent) {
+            if (leven(wordsToFind[0].toLowerCase(), word.toLowerCase()) <= maxDistPercent) {
               let i = index
-              wordsToFind.slice(1).some((w) => {
+              if (wordsToFind.slice(1).every((w) => {
                 i++
-                if (leven(w, arr[i]) / w.length <= maxDistPercent) {
-                  found = reactor
-                  return true
-                }
-              })
+                if (leven(w.toLowerCase(), arr[i].toLowerCase()) / w.length <= maxDistPercent) return true
+              })) found = reactor
               if (found) return true
             }
           })
